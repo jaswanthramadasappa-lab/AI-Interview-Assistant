@@ -51,6 +51,15 @@ app = Flask(__name__)
 
 CORS(
     app,
+    resources={
+        r"/*": {
+            "origins": [
+                "https://ai-interview-assistant-3-0hvz.onrender.com"
+            ]
+        }
+    },
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
     expose_headers=[
         "X-Question-Number",
         "X-Interview-Complete"
