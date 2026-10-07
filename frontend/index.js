@@ -401,8 +401,9 @@ function stopRecording() {
 
 // ========== API FUNCTIONS ==========
 
-const startInterviewApiUrl = "http://127.0.0.1:5000/start-interview";
+const API_URL = "https://ai-interview-assistant-1-ag5v.onrender.com";
 
+const startInterviewApiUrl = `${API_URL}/start-interview`;
 
 async function startInterview() {
     startInterviewBtn.classList.add("hidden");
@@ -436,8 +437,7 @@ async function startInterview() {
     }
 }
 
-const submitAnswerApiUrl = "http://127.0.0.1:5000/submit-answer";
-
+const submitAnswerApiUrl = `${API_URL}/submit-answer`;
 
 async function submitAnswer() {
     if (!recordedBlob) return;
@@ -509,7 +509,7 @@ async function endInterview() {
     await getFeedback();
 }
 
-const getFeedbackApiUrl = "http://127.0.0.1:5000/get-feedback";
+const getFeedbackApiUrl = `${API_URL}/get-feedback`;
 
 async function getFeedback() {
     showFeedbackSection();
